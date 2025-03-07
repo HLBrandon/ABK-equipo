@@ -1,0 +1,164 @@
+/* Ocultar el carrito en la página de login */
+.cart-modal, .cart-backdrop {
+    display: none !important;
+}
+
+/* Estilos específicos para el login */
+.card {
+    max-width: 500px;
+    margin: 2rem auto;
+    border: none !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 15px !important;
+}
+
+.card-body {
+    padding: 2.5rem !important;
+}
+
+/* Estilos para las pestañas */
+.nav-tabs {
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: #666;
+    font-weight: 500;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--main-yellow);
+    border: none;
+    background: none;
+}
+
+.nav-tabs .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-yellow);
+}
+
+/* Estilos para los formularios */
+.form-label {
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--main-yellow);
+    box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+}
+
+/* Estilos para los botones */
+.btn-primary {
+    padding: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    background-color: var(--main-yellow) !important;
+    border: none !important;
+    color: #000 !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    background-color: #f4cc00 !important;
+}
+
+/* Animaciones para los tabs */
+.tab-content {
+    padding-top: 1.5rem;
+}
+
+.tab-pane {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos responsivos */
+@media (max-width: 576px) {
+    .card-body {
+        padding: 1.5rem !important;
+    }
+
+    .nav-tabs .nav-link {
+        padding: 0.6rem 1rem;
+    }
+}
+
+/* Agregar al inicio del archivo los estilos del botón de regresar */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.btn-back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: var(--main-yellow);
+    color: #000;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-back:hover {
+    background-color: #f4cc00;
+    transform: translateX(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    color: #000;
+}
+
+.btn-back svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-back:hover svg {
+    transform: translateX(-3px);
+}
+
+/* Ajuste responsivo para el botón de regresar */
+@media (max-width: 576px) {
+    .back-button {
+        top: 10px;
+        left: 10px;
+    }
+    
+    .btn-back {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+} 

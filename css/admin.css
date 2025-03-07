@@ -1,0 +1,135 @@
+:root {
+    --main-yellow: #ffd700;
+    --primary-color: #ffd700;
+    --primary-light: #ffe44d;
+    --secondary-color: #64748b;
+    --background-light: #fff9e6;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --success-color: #22c55e;
+    --warning-color: #eab308;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.main-content {
+    padding: 20px;
+    width: 100%;
+}
+
+.navbar {
+    background-color: var(--main-yellow) !important;
+}
+
+.nav-link {
+    color: #000 !important;
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.nav-link.active {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: var(--main-yellow);
+    border: none;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #e6c200;
+    color: #000;
+}
+
+.card {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.logout-btn {
+    color: #000 !important;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.logout-btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .admin-container {
+        position: relative;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 20px;
+        margin-left: 0;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .col-md-4, .col-md-6, .col-md-8, .col-md-12 {
+        padding: 10px;
+    }
+
+    .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .btn-group .btn {
+        flex: 1;
+        white-space: nowrap;
+    }
+
+    form .row {
+        flex-direction: column;
+    }
+
+    .modal-dialog {
+        margin: 10px;
+    }
+}

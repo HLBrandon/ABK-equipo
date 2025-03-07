@@ -3,17 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Librería Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Programación Web</h1><hr><hr>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-shopping-bag"></i> Tienda Online
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="search-bar mx-auto">
+                <input type="text" class="form-control" placeholder="Buscar productos, marcas y más...">
+            </div>
+    
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoriaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-book"></i> Categoría
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="categoriaDropdown">
+                            <li><a class="dropdown-item" href="#">Ficción</a></li>
+                            <li><a class="dropdown-item" href="#">No Ficción</a></li>
+                            <li><a class="dropdown-item" href="#">Académicos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="autorDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-edit"></i> Autor
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="autorDropdown">
+                            <li><a class="dropdown-item" href="#">Autor 1</a></li>
+                            <li><a class="dropdown-item" href="#">Autor 2</a></li>
+                            <li><a class="dropdown-item" href="#">Autor 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="soporteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-headset"></i> Soporte
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="soporteDropdown">
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-user"></i> Mi cuenta</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-book"></i> Mis libros comprados</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <h4>Integrantes</h4>
-    <ul>
-        <li>Brandon</li>
-        <li>Kevin</li>
-        <li>Alan G</li>
-    </ul>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Tienda Online</h1>
+        
+        <!-- Sección de Libros Destacados -->
+        <section class="mb-5">
+            <h2 class="text-center mb-4">Libros Destacados</h2>
+            <div class="row" id="libros-destacados">
+                <!-- Los libros destacados se agregarán dinámicamente aquí -->
+            </div>
+        </section>
 
+        <!-- Sección de Los Más Vendidos -->
+        <section class="mb-5">
+            <h2 class="text-center mb-4">Los Más Vendidos</h2>
+            <div class="row" id="libros-vendidos">
+                <!-- Los libros más vendidos se agregarán dinámicamente aquí -->
+            </div>
+        </section>
+
+        <!-- Sección de Nuevos Lanzamientos -->
+        <section class="mb-5">
+            <h2 class="text-center mb-4">Nuevos Lanzamientos</h2>
+            <div class="row" id="libros-nuevos">
+                <!-- Los nuevos lanzamientos se agregarán dinámicamente aquí -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-backdrop"></div>
+    <div class="cart-modal">
+        <div class="modal-header">
+            <h5 class="modal-title">Carrito de compras</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Cart items will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="total-section">
+            <div class="d-flex justify-content-between">
+                <span>Total:</span>
+                <span class="total-amount" id="cart-total">$0.00</span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="continue-shopping">Continuar comprando</button>
+            <button type="button" class="btn btn-primary" id="checkout">Proceder al pago</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
